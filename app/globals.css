@@ -6,6 +6,7 @@
   --page-background: #150e12;
   --foreground: #ffffff;
   --digit-height: 40px;
+  --orbit-border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 body {
@@ -19,6 +20,19 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.2;
+}
+
+.project-title-text {
+  background: linear-gradient(100deg, #ffffff, #5f5f62);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.project-description-text {
+  background: linear-gradient(100deg, #ffffff, #5f5f62);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .digit {
@@ -178,4 +192,226 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
+}
+
+.falling-star {
+  opacity: 0;
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.1),0 0 0 8px rgba(255,255,255,0.1),0 0 20px rgba(255,255,255,0.1);
+    animation: falling-star-animation 3s linear infinite;
+}
+
+.falling-star::before{
+  content:'';
+  position: absolute;
+  width: 300px;
+  height: 1px;
+  background: linear-gradient(90deg,#fff,transparent);
+}
+
+@keyframes falling-star-animation
+{
+    0%
+    {
+        transform: rotate(315deg) translateX(0);
+        opacity: 0;
+    }
+    70%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        transform: rotate(315deg) translateX(-1000px);
+        opacity: 0;
+    }
+}
+
+.primary-button {
+  color: var(--foreground);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 100px;
+  padding: 15px 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.primary-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.orbit-container {
+  width: 1000px;
+  height: 1000px;
+  position: relative;
+  margin: 0 auto;
+  animation: orbit-container-fade-in 1s ease-out;
+  transform-origin: center;
+}
+
+@keyframes orbit-container-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.orbit-1 {
+  width: 400px;
+  height: 400px;
+  background-color: transparent;
+  border-radius: 99999px;
+  border: var(--orbit-border);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -200px;
+  margin-top: -200px;
+}
+ 
+.orbit-2 {
+  width: 550px;
+  height: 550px;
+  background-color: transparent;
+  border-radius: 99999px;
+  border: var(--orbit-border);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -275px;
+  margin-top: -275px;
+}
+
+.orbit-3 {
+  width: 700px;
+  height: 700px;
+  background-color: transparent;
+  border-radius: 99999px;
+  border: var(--orbit-border);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -350px;
+  margin-top: -350px;
+}
+
+.orbit-4 {
+  width: 850px;
+  height: 850px;
+  background-color: transparent;
+  border-radius: 99999px;
+  border: var(--orbit-border);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -425px;
+  margin-top: -425px;
+}
+
+.orbit-5 {
+  width: 1000px;
+  height: 1000px;
+  background-color: transparent;
+  border-radius: 99999px;
+  border: var(--orbit-border);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -500px;
+  margin-top: -500px;
+}
+
+.earth {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  left: 50%;
+  top: 50%;
+  margin-left: -200px;
+  margin-top: -200px;
+}
+
+.planet-1 {
+  --planet-size: 30px;
+  --orbit-radius: 200px;
+  --animation-speed: 10s;
+  --initial-rotation: 100deg;
+  background: linear-gradient(100deg, #FF69B4, #FFB6C1);
+}
+
+.planet-2 {
+  --planet-size: 50px;
+  --orbit-radius: 275px;
+  --animation-speed: 15s;
+  --initial-rotation: 200deg;
+  background: linear-gradient(100deg, #F5610F, #FF9104);
+}
+
+.planet-3 {
+  --planet-size: 40px;
+  --orbit-radius: 350px;
+  --animation-speed: 20s;
+  --initial-rotation: 80deg;
+  background: linear-gradient(100deg, #A7CF75, #627B34);
+}
+
+.planet-4 {
+  --planet-size: 60px;
+  --orbit-radius: 425px;
+  --animation-speed: 25s;
+  --initial-rotation: 245deg;
+  background: linear-gradient(100deg, #43387A, #FFFFFF);
+}
+
+.planet-5 {
+  --planet-size: 60px;
+  --orbit-radius: 500px;
+  --animation-speed: 30s;
+  --initial-rotation: 59deg;
+  background: linear-gradient(100deg, #007FFF, #21FFC2);
+}
+
+.planet-6 {
+  --planet-size: 60px;
+  --orbit-radius: 500px;
+  --animation-speed: 30s;
+  --initial-rotation: 10deg;
+  background: linear-gradient(100deg, #FFA585, #FFEDA0);
+}
+
+.planet {
+  width: var(--planet-size);
+  height: var(--planet-size);
+  left: calc(50% - var(--planet-size) / 2 - var(--orbit-radius));
+  top: calc(50% - var(--planet-size) / 2);
+  position: absolute;
+  transform-origin: calc(var(--orbit-radius) + var(--planet-size) / 2) calc(var(--planet-size) / 2);
+  border-radius: 50%;
+  animation: rotate var(--animation-speed) linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(var(--initial-rotation));
+  }
+  to {
+    transform: rotate(calc(var(--initial-rotation) + 360deg));
+  }
+}
+
+.section-container {
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--page-background) 50%, var(--page-background) 100%);
 }
