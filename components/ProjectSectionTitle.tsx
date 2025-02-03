@@ -1,5 +1,3 @@
-import { Icon } from "@iconify/react";
-
 export type ProjectSectionTitleProps = {
     title: string;
     description: string;
