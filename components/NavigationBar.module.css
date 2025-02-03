@@ -1,0 +1,19 @@
+.navigationBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+  border-bottom: 1px solid transparent;
+  padding: 40px 0;
+}
+
+.navigationBar.scrolled {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease, padding 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
